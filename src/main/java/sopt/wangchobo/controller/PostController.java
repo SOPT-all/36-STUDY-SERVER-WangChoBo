@@ -24,7 +24,7 @@ public class PostController {
     // @PostMapping은 HTTP POST 요청을 처리하는 메서드를 정의하는 어노테이션입니다.
     // "/post" URL로 POST 요청이 들어오면 이 메서드가 호출됩니다.
     // 이 메서드는 사용자가 새로운 게시글을 생성할 때 요청을 받습니다.
-    @PostMapping("/post")
+    @PostMapping("/posts")
     public ResponseEntity<Response<Void>> createPost(@RequestBody PostRequest postRequest) {
         // PostRequest는 클라이언트가 보낸 요청의 본문(body)을 담고 있습니다.
         // 여기서 postRequest는 사용자가 입력한 'title'과 'content'를 담고 있습니다.
@@ -43,7 +43,7 @@ public class PostController {
     // "/post/{id}" URL로 GET 요청이 들어오면 이 메서드가 호출됩니다.
     // {id}는 URL의 변수 부분으로, 요청할 게시글의 ID를 전달받습니다.
     // 이 메서드는 특정 ID를 가진 게시글을 조회하는 기능을 담당합니다.
-    @GetMapping("/post/{id}")
+    @GetMapping("/posts/{id}")
     public ResponseEntity<Response<PostResponse>> getPost(@PathVariable Long id) {
         // @PathVariable 어노테이션을 사용하여 URL에서 전달된 {id} 값을 메서드 인자 'id'로 받습니다.
         // 'id'는 조회할 게시글의 고유 ID를 나타냅니다.
